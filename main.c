@@ -17,13 +17,13 @@ int main(int argc, char *argv[], char **env)
     ssize_t bytes;
     pid_t wpid;
     int w_status;
-    bool from_pipe = false;
+    int from_pipe = 0;
     struct stat statbuf;
 
     while(!from_pipe)
     {
         if (isatty(STDIN_FILENO) == 0)
-            from_pipe = true;
+            from_pipe = 1;
 
         write(STDOUT_FILENO, prompt, 2);
 

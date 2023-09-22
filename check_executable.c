@@ -5,19 +5,19 @@
  *@pathname: command entered
  *@statbuf: memory allocation for the command
  *
- *Return: boolean of (true) if executable and (false) otherwise
+ *Return: boolean of (true - 1) if executable and (false - 0) otherwise
 **/
 
 
-bool check_exe(char *pathname,struct stat *statbuf)
+int check_exe(char *pathname,struct stat *statbuf)
 {
-    int stat_return = 0;
+	int stat_return = 0;
 
-    stat_return = stat(pathname, statbuf);
+	stat_return = stat(pathname, statbuf);
 
-    if (stat_return == 0)
-    {
-        return (true);
-    }
-    return (false);
+	if (stat_return == 0)
+	{
+		return (1);
+	}
+	return (0);
 }

@@ -14,7 +14,7 @@
 #include <stdbool.h>
 
 char **split_line(char *line);
-bool check_exe(char *pathname, struct stat *statbuf);
+int check_exe(char *pathname, struct stat *statbuf);
 char *resolve_path(char *cmd);
 
 #endif
