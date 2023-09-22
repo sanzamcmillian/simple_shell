@@ -13,9 +13,7 @@
 #include <errno.h>
 #include <stdbool.h>
 
-#define TOKEN_DELIMETERS " \t\r\n\a"
 char **split_line(char *line);
-
 bool check_exe(char *pathname, struct stat *statbuf);
 char *resolve_path(char *cmd);
 

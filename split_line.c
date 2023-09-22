@@ -1,10 +1,13 @@
 #include "shell.h"
 
-/*
+/**
  *split_line - splits a string into multiple strings
  *@line: the string received to be broke into multiple strings
+ *
  *Return: the split string
- */
+**/
+
+#define TOKEN_DELIMITERS " \t\r\n\a"
 
 char **split_line(char *line) {
     int bufsize = 64, position = 0;

@@ -5,7 +5,7 @@
  *@cmd:  command to be checked
  *
  *Return: the new pathname if exits in the files, else Null
- */
+**/
 
 
 char *resolve_path(char *cmd) {
