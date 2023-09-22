@@ -13,12 +13,14 @@
 int main(int argc, char *argv[], char **env)
 {
     char *buff = NULL, *prompt = "$ ";
-    size_t buff_size = 0;
+    size_t buff_size = argc;
     ssize_t bytes;
     pid_t wpid;
     int w_status;
     int from_pipe = 0;
     struct stat statbuf;
+    char *resolved_path;
+    char *command_to_run;
 
     while(!from_pipe)
     {
@@ -61,8 +63,8 @@ int main(int argc, char *argv[], char **env)
             continue; // Move to next iteration of the loop to await next command
 }
 
-        char *resolved_path = resolve_path(argv[0]);
-        char *command_to_run = resolved_path ? resolved_path : argv[0];
+        resolved_path = resolve_path(argv[0]);
+        command_to_run = resolved_path ? resolved_path : argv[0];
 
         if (!check_exe(command_to_run, &statbuf))
         {
