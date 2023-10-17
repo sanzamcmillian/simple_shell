@@ -29,7 +29,7 @@ int main(int argc, char *argv[], char **env)
 
         	write(STDOUT_FILENO, prompt, 2);
 
-        	//receive command
+        	/*receive command */
         	bytes = getline(&buff, &buff_size, stdin);
         	if (bytes == -1)
         	{
@@ -63,7 +63,7 @@ int main(int argc, char *argv[], char **env)
                 	}
             	free(buff);
             	free(argv);
-            	continue; // Move to next iteration of the loop to await next command
+            	continue; /* Move to next iteration of the loop to await next command */
 		}
 
         	resolved_path = resolve_path(argv[0]);

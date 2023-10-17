@@ -25,7 +25,7 @@ char *resolve_path(char *cmd)
 	strcpy(local_path, original_PATH);
 
 	p = strtok(local_path, ":");
-	resolved_path = malloc(PATH_MAX);  // PATH_MAX from limits.h
+	resolved_path = malloc(PATH_MAX);  /* PATH_MAX from limits.h */
 
 	while (p != NULL)
 	{
