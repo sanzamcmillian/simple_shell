@@ -9,7 +9,8 @@
 **/
 
 
-char *resolve_path(char *cmd) {
+char *resolve_path(char *cmd)
+{
 	char *original_PATH = getenv("PATH");
 	struct stat sb;
 	char *local_path = NULL;
@@ -26,13 +27,13 @@ char *resolve_path(char *cmd) {
 	p = strtok(local_path, ":");
 	resolved_path = malloc(PATH_MAX);  // PATH_MAX from limits.h
 
-	while (p != NULL) {
+	while (p != NULL)
+	{
 		snprintf(resolved_path, PATH_MAX, "%s/%s", p, cmd);
-
-        	if (stat(resolved_path, &sb) == 0 && sb.st_mode & S_IXUSR) {
+        	if (stat(resolved_path, &sb) == 0 && sb.st_mode & S_IXUSR)
+		{
             		return resolved_path;
         	}
-
         	p = strtok(NULL, ":");
     	}
 	free(local_path);
