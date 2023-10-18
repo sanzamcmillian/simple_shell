@@ -30,7 +30,7 @@ int main(int argc, char *argv[], char **env)
         	write(STDOUT_FILENO, prompt, 2);
 
         	/*receive command */
-        	bytes = getline(&buff, &buff_size, stdin);
+        	bytes = _getline(&buff, &buff_size, stdin);
         	if (bytes == -1)
         	{
             		perror("Error (getline)");

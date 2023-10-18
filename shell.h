@@ -16,5 +16,6 @@
 char **split_line(char *line);
 int check_exe(char *pathname, struct stat *statbuf);
 char *resolve_path(char *cmd);
+ssize_t _getline(char **lineptr, size_t *n, FILE *stream);
 
 #endif
