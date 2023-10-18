@@ -25,7 +25,7 @@ int main(int argc, char *argv[], char **env)
     	while(!from_pipe)
     	{
         	if (isatty(STDIN_FILENO) == 0)
-            	from_pipe = 1;
+			from_pipe = 1;
 
         	write(STDOUT_FILENO, prompt, 2);
 
