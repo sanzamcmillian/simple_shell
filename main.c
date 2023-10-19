@@ -20,7 +20,7 @@ int main(int argc, char *argv[], char **env)
 	int from_pipe = 0;
 	struct stat statbuf;
  	char *resolved_path = NULL;
- 	char *command_to_run;
+ 	char *command_to_run = NULL;;
 
     	while(!from_pipe)
     	{
@@ -34,7 +34,7 @@ int main(int argc, char *argv[], char **env)
         	if (bytes == -1)
         	{
             		perror("Error (getline)");
-            		free(buff);
+			free(buff);
             		exit(EXIT_FAILURE);
         	}
 
@@ -49,8 +49,7 @@ int main(int argc, char *argv[], char **env)
 		}
         	if (strcmp(argv[0], "exit") == 0)
 		{
-            		free(buff);
-			buff = NULL;
+			free(buff);
            	 	free(argv);
             		exit(0);
         	}
@@ -62,8 +61,7 @@ int main(int argc, char *argv[], char **env)
                 		printf("%s\n", *current_env_var);
                 		current_env_var++;
                 	}
-            	free(buff);
-		buff = NULL;
+		free(buff);
             	free(argv);
             	continue; /* Move to next iteration of the loop to await next command */
 		}
@@ -84,8 +82,7 @@ int main(int argc, char *argv[], char **env)
         	if (wpid == -1)
         	{
             		perror("Error (fork)");
-            		free(buff);
-			buff = NULL;
+			free(buff);
             		free(argv);
             		free(resolved_path);
             		exit(EXIT_FAILURE);
@@ -101,15 +98,13 @@ int main(int argc, char *argv[], char **env)
         	if (waitpid(wpid, &w_status, 0) == -1)
         	{
             		perror("Error (wait)");
+			free(buff);
             		free(argv);
-            		free(buff);
-			buff = NULL;
             		exit(EXIT_FAILURE);
         	}
         	free(argv);
-        	free(command_to_run);
+        	/*free(command_to_run);*/
 	}
     	free(buff);
-	buff = NULL;
     	return (0);
 }
