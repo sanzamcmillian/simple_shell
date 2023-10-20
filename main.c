@@ -30,7 +30,7 @@ int main(int argc __attribute__((unused)), char **argv)
 	{
 		non_interactive();
 		print(" ($) ", STDOUT_FILENO);
-		if (getline(&line, &n, stdin) == -1)
+		if (_getline(&line, &n, stdin) == -1)
 		{
 			free(line);
 			exit(status);

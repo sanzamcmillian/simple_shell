@@ -75,5 +75,7 @@ void quit(char **);
 extern void non_interactive(void);
 extern void initializer(char **current_command, int type_command);
 
+/*getline*/
+ssize_t _getline(char **lineptr, size_t *n, FILE *stream);
 
 #endif
