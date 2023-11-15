@@ -5,9 +5,6 @@
  * @argc: number of arguments passed
  * @argv: program arguments to be parsed
  *
- * applies the functions in utils and helpers
- * implements EOF
- * Prints error on Failure
  * Return: 0 on success
  */
 
@@ -46,13 +43,11 @@ int main(int argc __attribute__((unused)), char **argv)
 			}
 			type_command = parse_command(current_command[0]);
 
-			/* initializer -   */
 			initializer(current_command, type_command);
 			free(current_command);
 		}
 		free(commands);
 	}
 	free(line);
-
 	return (status);
 }
