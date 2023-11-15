@@ -1,6 +1,7 @@
 #include "shell.h"
 
-/** parse_command - determines the type of the command
+/*
+ * parse_command - determines the type of the command
  * @command: command to be parsed
  *
  * Return: constant representing the type of the command
