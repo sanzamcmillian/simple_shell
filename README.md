@@ -1,18 +1,23 @@
-SIMPLE SHELL
+# simple_shell
 
-Simple Shell is a basic UNIX-like command line interpreter written in C. This shell supports executing basic commands,piping, and redirection.
+**simple_shell** is a basic UNIX-style command-line interpreter written in C. It replicates some of the core functionalities of the standard Unix shell, including executing built-in and external commands, input/output redirection, and piping.
 
-FEATURES
+## Features
 
-1. Execute built-in and external commands
-2. Input abd output redirection using '>' and '<'.
-3. piping commands using '|'.
+- Execute built-in commands (`exit`, `env`)
+- Execute external commands in the system’s `$PATH`
+- Support for input (`<`) and output (`>`) redirection
+- Simple piping (`|`) between commands
+- Works in both interactive and non-interactive modes
 
-PREREQUISIETS
+## Prerequisites
 
-1. GCC(GNU Compiler Collection) for compiling the code.
-2. A UNIX-like environment(Linux, macOS).
+- GCC (GNU Compiler Collection)
+- A UNIX-like operating system (Linux, macOS, etc.)
 
-CONTRIBUTIONS 
+## Installation
 
-Sanele Skhosana  is the sole owner of this project.
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/sanzamcmillian/simple_shell.git
