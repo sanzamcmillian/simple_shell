@@ -21,3 +21,56 @@
 
    ```bash
    git clone https://github.com/sanzamcmillian/simple_shell.git
+
+2. Navigate into the project directory:
+
+  ```bash
+  cd simple_shell
+
+3. Compile the shell:
+
+  ```bash
+  gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
+
+
+## Usage
+
+- To start the shell, run:
+  ```bash
+  ./hsh
+
+- Then you can start typing commands, for example:
+
+  ```bash
+  $ ls -la
+  $ echo "Hello, World!"
+  $ cat input.txt > output.txt
+  $ grep "word" file.txt | sort
+
+- To exit the shell, use:
+
+  ```bash
+  exit
+
+## Built-in Commands
+ - `exit`: Exit the shell
+ - `env`: Print environment variables
+
+
+## File Structure
+
+ - `main.c`: Entry point, main loop
+ - `builtin.c`: Built-in command implementations
+ - `getline.c`: Custome `getline` implementation
+ - `init.c`: initialization logic
+ - `non_inter.c`: Non-interactive mode handler
+ - `util.c`: Helper and utility functions
+ - `shell.h`: Header file with funtction declarations and macros
+
+## Author
+
+Sanele Skhosana
+
+## License
+
+This project is open-source and available under MIT License.
