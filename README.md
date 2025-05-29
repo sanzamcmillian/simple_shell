@@ -24,13 +24,13 @@
 
 2. Navigate into the project directory:
 
-  ```bash
-  cd simple_shell
+   ```bash
+   cd simple_shell
 
 3. Compile the shell:
 
-  ```bash
-  gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
+   ```bash
+   gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
 
 
 ## Usage
